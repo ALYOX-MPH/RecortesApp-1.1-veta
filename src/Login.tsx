@@ -3,7 +3,8 @@ import { ImageBackground, Pressable, SafeAreaView, StyleSheet, Text, TextInput, 
 
 export const Login = () => {
   const [text, onChangeText] = React.useState('');
-  
+  const [text2, onChangePassword] = React.useState('');
+
     return (
     <SafeAreaView style={styles.container}>
         <ImageBackground source={ require('../img/fondo2.jpg')} resizeMode="cover" style={styles.fondoimg}>
@@ -18,8 +19,8 @@ export const Login = () => {
                       placeholder="Usuario"
                       />
 
-                <TextInput style={styles.input}  onChangeText={onChangeText}
-                      value={text}
+                <TextInput style={styles.input}  onChangeText={onChangePassword}
+                      value={text2}
                       placeholder="Contraseña"
                       keyboardType="numeric"/>
 

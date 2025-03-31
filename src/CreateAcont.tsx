@@ -1,11 +1,12 @@
 import React from 'react'
-import { ImageBackground, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
-
+import { Alert, ImageBackground, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 
 export const CreateAcont = () => {
-    const [text, onChangeText] = React.useState('');
-    
+    const [text, onChangeName] = React.useState('');
+    const [text2, onChangeGmail] = React.useState('');
+    const [text3, onChangePassword] = React.useState('');
   
     return (
    <SafeAreaView style={styles.container}>
@@ -14,22 +15,24 @@ export const CreateAcont = () => {
     <Text style={styles.text}>Registrate</Text>
     <View>
     
-    <TextInput style={styles.input}  onChangeText={onChangeText}
+    <TextInput style={styles.input}  onChangeText={onChangeName}
           value={text}
           placeholder="Name"
           />
-    <TextInput style={styles.input}  onChangeText={onChangeText}
-          value={text}
+    <TextInput style={styles.input}  onChangeText={onChangeGmail}
+          value={text2}
           placeholder="Gmail"
           keyboardType="numeric"/>
-    <TextInput style={styles.input}  onChangeText={onChangeText}
-          value={text}
+    <TextInput style={styles.input}  onChangeText={onChangePassword}
+          value={text3}
           placeholder="Password"
           keyboardType="numeric"/>
     
     <Pressable style={styles.button}><Text style={styles.textButton}>Login</Text> </Pressable>
     </View>
     <Text style={styles.textWhit}>Registrate con</Text>
+    <Pressable onPress={()=>Alert.alert("Google")}><Icon name="logo-google" style={styles.iconGoogle}></Icon></Pressable>
+    <Pressable onPress={()=> Alert.alert("Apple")}><Icon name="logo-apple" style={styles.iconApple}></Icon></Pressable>
     </ImageBackground>
    </SafeAreaView>
   )
@@ -93,16 +96,31 @@ const styles = StyleSheet.create({
         fontSize:20,
         color:'white',
         marginTop:25
-    }                                       
+    },
+    iconApple:{
+        marginLeft:240,
+        color:'white',
+        fontSize:85,
+        marginTop:-85
+
+        
+    },
+iconGoogle:{
+    marginTop:10,
+    marginLeft:40,
+    color:'white',
+    fontSize:70,
+}                                  
 })
 
 /*  Faltantes:
     -Agregar las Fuentes
     -Poner funciones de los botones (Login y Registrate)
-    -Arreglar los inputs (Todo lo que se escribe en uno se visualiza en todos )
-    -Poner los iconos 
+    -Arreglar los inputs (Todo lo que se escribe en uno se visualiza en todos )//(Listo)
+    -Poner los iconos/////(Listo)
     -poner los enlaces
     -poner funcion de Registrarte con Google y Apple
+    -Solicionar el error (sale un alert de los textos)
  */ 
 
 

@@ -9,8 +9,8 @@ export const App = () => {
   return (
     <SafeAreaView style={styles.container}>
     {/*<CreateAcont/>*/}
-    {/*<Login/>*/}
-    <Inicio/>
+    <Login/>
+    {/*<Inicio/>*/}
     </SafeAreaView>
   )
 }
